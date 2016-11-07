@@ -7,31 +7,34 @@
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/github-dark.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/main.js"></script>
+    <script src="javascripts/respond.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
   </head>
   <body>
-
-      <header>
-        <h1>Leodongxu.GitHub.io</h1>
-        <p></p>
-      </header>
-
-      <div id="banner">
-        <span id="logo"></span>
-
-        <a href="https://github.com/Leodongxu" class="button fork"><strong>View On GitHub</strong></a>
-      </div><!-- end banner -->
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/Leodongxu">View On GitHub</a></li>
+        </nav>
+      </div><!-- end header -->
 
     <div class="wrapper">
-      <nav>
-        <ul></ul>
-      </nav>
+
       <section>
+        <div id="title">
+          <h1>Leodongxu.GitHub.io</h1>
+          <p></p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/Leodongxu">Leodongxu</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
         <h2>
 <a id="welcome" class="anchor" href="#welcome" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>welcome</h2>
 
@@ -85,18 +88,26 @@ When using a device like this, odds are you want to minimize the number of coins
 
 <p>It turns out that this greedy approach (i.e., algorithm) is not only locally optimal but also globally so for America’s currency (and also the European Union’s). That is, so long as a cashier has enough of each coin, this largest-to-smallest approach will yield the fewest coins possible. How few? Well, you tell us!</p>
 
-<p><code>#include &lt;cs50.h&gt;
-</code>#include 
-<code>#include &lt;math.h&gt;
-int main(void)
-{   
+<p>`</p>
+
+<h1>
+<a id="include-" class="anchor" href="#include-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>include </h1>
+
+<h1>
+<a id="include--1" class="anchor" href="#include--1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>include </h1>
+
+<h1>
+<a id="include--2" class="anchor" href="#include--2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>include </h1>
+
+<p>int main(void)
+{<br>
     float x;
     do{
         printf("O hai! How much change is owed\n");
         x = GetFloat();
     }while(x&lt;0);
-    x = round(x*100)/100;
-    int y = round(100*x);
+    x = round(x<em>100)/100;
+    int y = round(100</em>x);
     int count = 0;
     count = count + y/25;
     y = y%25;
@@ -106,18 +117,30 @@ int main(void)
     y = y%5;
     count = count + y/1;
     printf("%i\n",count);
-}</code></p>
+}
+`</p>
 
 <h1>
 <a id="week2-vigenère" class="anchor" href="#week2-vigen%C3%A8re" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Week2 Vigenère</h1>
 
-<p>Background</p>
+<p>Background
+<img src="Leodongxu.github.io/background.png" alt=""></p>
 
-<p><code>#include &lt;stdio.h&gt;
-</code>include 
-<code>#include &lt;string.h&gt;
-</code>#include 
-`int main(int argc, string argv[])
+<p>`</p>
+
+<h1>
+<a id="include--3" class="anchor" href="#include--3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>include </h1>
+
+<h1>
+<a id="include--4" class="anchor" href="#include--4" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>include </h1>
+
+<h1>
+<a id="include--5" class="anchor" href="#include--5" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>include </h1>
+
+<h1>
+<a id="include--6" class="anchor" href="#include--6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>include </h1>
+
+<p>int main(int argc, string argv[])
 {
     if (argc !=2 ) 
     {
@@ -181,16 +204,15 @@ for(int i=0;i&lt;strlen(p);i++)
 printf("\n");
 </code></pre>
 
-<p>}`</p>
+<p>}
+`</p>
 
 <h3>
 <a id="about-me" class="anchor" href="#about-me" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>About me</h3>
 
 <p>I am now a student in the Quantitative Finance and Risk Management Program at the university of Michigan. And I am actively seeking for an intern position.</p>
       </section>
-      <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
-      </footer>
+
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
