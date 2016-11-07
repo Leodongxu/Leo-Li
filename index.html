@@ -29,9 +29,7 @@
 <p>This is the brief introduction about Leo Li.(final update 11/1/2016)</p>
 
 <h2>
-<a id="interesting-project" class="anchor" href="#interesting-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Interesting Project</h2>
-
-<p>Portfolio simulation for Risk Management</p>
+<a id="portfolio-simulation-for-risk-management" class="anchor" href="#portfolio-simulation-for-risk-management" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Portfolio simulation for Risk Management</h2>
 
 <p>A key tool in portfolio risk management is making forecasts of the portfolio's PnL distribution at some horizon. A typical horizon is one day, but it could be longer. Forecasting the PnL distribution typically is done by first creating a market model of the factors that drive changes in portfolio value. Generating a large number of market scenarios gives a distribution of PnL.</p>
 
@@ -39,13 +37,19 @@
 
 <p>The steps involved can be summarized as:</p>
 
-<p>1.Determine which market factors (e.g. prices, exchange rates, interest rates, implied volatilities, etc) drive portfolio value.
-2.Find market factor level data (typically daily close). To start, can use Yahoo Finance. Define a file format, which might look something like this. Note that the example file uses YYYYMMDD format, which you can generate in Excel via a custom date format.
-3.Create a C++ data model for market factor data. For example, you might have a Market class, consisting of a map of named MarketFactor objects.
-4.Read your CSV market data from a stream and populate MarketFactor objects that are added to Market. Since log returns never change, these could be computed and stored as well while you load prices into your MarketFactor. You can also capture the associated dates, taking advantage of the boost date_time library.
-5.You should be able to retrieve a MarketFactor from the Market object by name, using a std::map.
-6.Create a scenario generating object (e.g. MarketSimulation). You shoud be able to ask a MarketFactor object for its return given the MarketSimulation. Now you have a working simulation of the market!
-7.Now we need to see the PnL impact of the scenario on our portfolio. That means we can create a Portfolio, which contains Positions. Each Position is based on a some amount of a Security. Initially, we can assume our Security is a stock.</p>
+<p>1.Determine which market factors (e.g. prices, exchange rates, interest rates, implied volatilities, etc)    drive portfolio value.</p>
+
+<p>2.Find market factor level data (typically daily close). To start, can use Yahoo Finance. Define a file format, which might look something like this. Note that the example file uses YYYYMMDD format, which you can generate in Excel via a custom date format.</p>
+
+<p>3.Create a C++ data model for market factor data. For example, you might have a Market class, consisting of a map of named MarketFactor objects.</p>
+
+<p>4.Read your CSV market data from a stream and populate MarketFactor objects that are added to Market. Since log returns never change, these could be computed and stored as well while you load prices into your MarketFactor. You can also capture the associated dates, taking advantage of the boost date_time library.</p>
+
+<p>5.You should be able to retrieve a MarketFactor from the Market object by name, using a std::map.</p>
+
+<p>6.Create a scenario generating object (e.g. MarketSimulation). You shoud be able to ask a MarketFactor object for its return given the MarketSimulation. Now you have a working simulation of the market!</p>
+
+<p>7.Now we need to see the PnL impact of the scenario on our portfolio. That means we can create a Portfolio, which contains Positions. Each Position is based on a some amount of a Security. Initially, we can assume our Security is a stock.</p>
 
 <h2>
 <a id="resume" class="anchor" href="#resume" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Resume</h2>
