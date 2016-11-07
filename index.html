@@ -87,28 +87,28 @@ When using a device like this, odds are you want to minimize the number of coins
 
 <p>It turns out that this greedy approach (i.e., algorithm) is not only locally optimal but also globally so for America’s currency (and also the European Union’s). That is, so long as a cashier has enough of each coin, this largest-to-smallest approach will yield the fewest coins possible. How few? Well, you tell us!</p>
 
-<p><code>#include &lt;cs50.h&gt;
-</code>#include 
-<code>#include &lt;math.h&gt;
-</code>int main(void)
-<code>{   
-</code>    float x;
-<code>do{
-</code>        printf("O hai! How much change is owed\n");
-<code>x = GetFloat();
-</code>    }while(x&lt;0);
-<code>x = round(x*100)/100;
-</code>    int y = round(100*x);
-<code>int count = 0;
-</code>    count = count + y/25;
-<code>y = y%25;
-</code>    count = count + y/10;
-<code>y = y%10;
-</code>    count = count + y/5;
-<code>y = y%5;
-</code>    count = count + y/1;
-<code>printf("%i\n",count);
-</code>}    </p>
+<div class="highlight highlight-source-c"><pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>cs50.h<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>stdio.h<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>math.h<span class="pl-pds">&gt;</span></span>
+<span class="pl-k">int</span> <span class="pl-en">main</span>(<span class="pl-k">void</span>)
+{   
+    <span class="pl-k">float</span> x;
+    <span class="pl-k">do</span>{
+        <span class="pl-c1">printf</span>(<span class="pl-s"><span class="pl-pds">"</span>O hai! How much change is owed<span class="pl-cce">\n</span><span class="pl-pds">"</span></span>);
+        x = <span class="pl-c1">GetFloat</span>();
+    }<span class="pl-k">while</span>(x&lt;<span class="pl-c1">0</span>);
+    x = <span class="pl-c1">round</span>(x*<span class="pl-c1">100</span>)/<span class="pl-c1">100</span>;
+    <span class="pl-k">int</span> y = <span class="pl-c1">round</span>(<span class="pl-c1">100</span>*x);
+    <span class="pl-k">int</span> count = <span class="pl-c1">0</span>;
+    count = count + y/<span class="pl-c1">25</span>;
+    y = y%<span class="pl-c1">25</span>;
+    count = count + y/<span class="pl-c1">10</span>;
+    y = y%<span class="pl-c1">10</span>;
+    count = count + y/<span class="pl-c1">5</span>;
+    y = y%<span class="pl-c1">5</span>;
+    count = count + y/<span class="pl-c1">1</span>;
+    <span class="pl-c1">printf</span>(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-c1">%i</span><span class="pl-cce">\n</span><span class="pl-pds">"</span></span>,count);
+}</pre></div>
 
 <h1>
 <a id="week2-vigenère" class="anchor" href="#week2-vigen%C3%A8re" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Week2 Vigenère</h1>
@@ -117,75 +117,73 @@ When using a device like this, odds are you want to minimize the number of coins
 
 <p><img src="Leodongxu.github.io/background.png" alt=""></p>
 
-<p><code>#include &lt;stdio.h&gt;
-</code>#include 
-<code>#include &lt;string.h&gt;
-</code>#include 
-<code>int main(int argc, string argv[])
-</code>{
-<code>if (argc !=2 ) 
-</code>    {
-<code>printf("Usage: ./caesar k \n");
-</code>        return 1;
-<code>}
-</code><br>
-<code>int n = strlen(argv[1]);
-</code>    int count;
-<code>string key = argv[1];
-</code><br>
-<code>for(int i=0; i&lt;n ;i++)
-</code>    {
-<code>if (isalpha(key[i]) == false)
-</code>        {
-<code>break;
-</code>        }
-<code>count = i;
-</code>    }
-<code>
-</code>    if(count != n-1) 
-<code>{
-</code>        printf("Usage: ./caesar k \n");
-<code>return 1;  
-</code>    }
-<code>
-</code>    printf("plaintext:   ");
-<code>string p = get_string();
-</code>    printf("ciphertext:  ");
-<code>int j = 0;
-</code>    for(int i=0;i&lt;strlen(p);i++)
-<code>{
-</code>       if isalpha(p[i])
-<code>{
-</code>            if isupper(key[j%n])
-<code>{
-</code>                if isupper(p[i])
-<code>{
-</code>                    p[i] = (p[i] - 65 + key[j%n] - 65)%26 + 65;
-<code>}
-</code>                if islower(p[i])
-<code>{
-</code>                    p[i] = (p[i] - 97 + key[j%n] - 65)%26 + 97;
-<code>}
-</code>            }
-<code>if islower(key[j%n])
-</code>            {
-<code>if isupper(p[i])
-</code>                {
-<code>p[i] = (p[i] - 65 + key[j%n] - 97)%26 + 65;
-</code>                }
-<code>if islower(p[i])
-</code>                {
-<code>p[i] = (p[i] - 97 + key[j%n] - 97)%26 + 97;
-</code>                }
-<code>}
-</code>            j = j + 1;
-<code>}
-</code>        printf("%c",p[i]);
-<code>}
-</code>    printf("\n");
-`}    </p>
+<div class="highlight highlight-source-c"><pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>stdio.h<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>cs50.h<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>string.h<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>ctype.h<span class="pl-pds">&gt;</span></span>
+<span class="pl-k">int</span> <span class="pl-en">main</span>(<span class="pl-k">int</span> argc, string argv[])
+{
+    <span class="pl-k">if</span> (argc !=<span class="pl-c1">2</span> ) 
+    {
+        <span class="pl-c1">printf</span>(<span class="pl-s"><span class="pl-pds">"</span>Usage: ./caesar k <span class="pl-cce">\n</span><span class="pl-pds">"</span></span>);
+        <span class="pl-k">return</span> <span class="pl-c1">1</span>;
+    }
 
-<p>``</p>
+    <span class="pl-k">int</span> n = <span class="pl-c1">strlen</span>(argv[<span class="pl-c1">1</span>]);
+    <span class="pl-k">int</span> count;
+    string key = argv[<span class="pl-c1">1</span>];
+
+    <span class="pl-k">for</span>(<span class="pl-k">int</span> i=<span class="pl-c1">0</span>; i&lt;n ;i++)
+    {
+        <span class="pl-k">if</span> (<span class="pl-c1">isalpha</span>(key[i]) == <span class="pl-c1">false</span>)
+        {
+            <span class="pl-k">break</span>;
+        }
+        count = i;
+    }
+
+    <span class="pl-k">if</span>(count != n-<span class="pl-c1">1</span>) 
+    {
+        <span class="pl-c1">printf</span>(<span class="pl-s"><span class="pl-pds">"</span>Usage: ./caesar k <span class="pl-cce">\n</span><span class="pl-pds">"</span></span>);
+        <span class="pl-k">return</span> <span class="pl-c1">1</span>;  
+    }
+
+    <span class="pl-c1">printf</span>(<span class="pl-s"><span class="pl-pds">"</span>plaintext:   <span class="pl-pds">"</span></span>);
+    string p = <span class="pl-c1">get_string</span>();
+    <span class="pl-c1">printf</span>(<span class="pl-s"><span class="pl-pds">"</span>ciphertext:  <span class="pl-pds">"</span></span>);
+    <span class="pl-k">int</span> j = <span class="pl-c1">0</span>;
+    <span class="pl-k">for</span>(<span class="pl-k">int</span> i=<span class="pl-c1">0</span>;i&lt;<span class="pl-c1">strlen</span>(p);i++)
+    {
+        <span class="pl-k">if</span> <span class="pl-c1">isalpha</span>(p[i])
+        {
+            <span class="pl-k">if</span> <span class="pl-c1">isupper</span>(key[j%n])
+            {
+                <span class="pl-k">if</span> <span class="pl-c1">isupper</span>(p[i])
+                {
+                    p[i] = (p[i] - <span class="pl-c1">65</span> + key[j%n] - <span class="pl-c1">65</span>)%<span class="pl-c1">26</span> + <span class="pl-c1">65</span>;
+                }
+                <span class="pl-k">if</span> <span class="pl-c1">islower</span>(p[i])
+                {
+                    p[i] = (p[i] - <span class="pl-c1">97</span> + key[j%n] - <span class="pl-c1">65</span>)%<span class="pl-c1">26</span> + <span class="pl-c1">97</span>;
+                }
+            }
+            <span class="pl-k">if</span> <span class="pl-c1">islower</span>(key[j%n])
+            {
+                <span class="pl-k">if</span> <span class="pl-c1">isupper</span>(p[i])
+                {
+                    p[i] = (p[i] - <span class="pl-c1">65</span> + key[j%n] - <span class="pl-c1">97</span>)%<span class="pl-c1">26</span> + <span class="pl-c1">65</span>;
+                }
+                <span class="pl-k">if</span> <span class="pl-c1">islower</span>(p[i])
+                {
+                    p[i] = (p[i] - <span class="pl-c1">97</span> + key[j%n] - <span class="pl-c1">97</span>)%<span class="pl-c1">26</span> + <span class="pl-c1">97</span>;
+                }
+            }
+            j = j + <span class="pl-c1">1</span>;
+        }
+        <span class="pl-c1">printf</span>(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-c1">%c</span><span class="pl-pds">"</span></span>,p[i]);
+    }
+    <span class="pl-c1">printf</span>(<span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\n</span><span class="pl-pds">"</span></span>);
+}</pre></div>
 
 <h3>
 <a id="about-me" class="anchor" href="#about-me" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>About me</h3>
